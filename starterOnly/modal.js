@@ -21,6 +21,9 @@ const enteredEmail = document.getElementById("email");
 const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
 const birthdate = document.getElementById("birthdate");
 const quantity = document.getElementById("quantity");
+const locationRadio = document.querySelectorAll(
+  "input[name=location]"
+)
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -95,6 +98,18 @@ function quantityValidation() {
 }
 
 // 5. Location radio button validation.
+function radioValidation() {
+let isChecked = false;
+  locationRadio.forEach((radio) => {
+    if(radio.checked) {
+      isChecked = true;
+    }
+  });
+  if(!isChecked) {
+    locationRadio[0].parentNode.setAttribute("data-error-visible", "true");
+  }
+}
+
 
 // 6. Checkbox validation.
 
@@ -107,6 +122,7 @@ function validateAll(){
   emailValidation();
   bdayValidation();
   quantityValidation();
+  radioValidation();
 
 }
 
