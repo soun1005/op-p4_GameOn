@@ -51,7 +51,7 @@
           je m'inscris
         </button>
       </div>
-
+      <!-- Modal -->
       <div class="bground">
         <div class="content">
           <span class="close"></span>
@@ -60,57 +60,84 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="return validate(event);"
             >
+            <!-- first name -->
               <div
-                class="formData">
-                <label>Prénom</label><br>
+                class="formData"
+                data-error="Veuillez entrer 2 caractères ou plus pour le champ du prenom."
+                >
+                <label for="first">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="first"
                   name="first"
                   minlength="2"
+                  required
                 /><br>
               </div>
+            <!-- last name  -->
               <div
-                class="formData">
-                <label>Nom</label><br>
+                class="formData"
+                data-error=" Veuillez entrer 2 caractères ou plus pour le champ du nom."
+                >
+                <label for="last">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
+                  minlength="2"
+                  required
                 /><br>
               </div>
+              <!-- email input -->
               <div
-                class="formData">
-                <label>E-mail</label><br>
+                class="formData"
+                data-error="L'adresse électronique est invalide."
+                >
+                <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
+                  placeholder="abc@defg.com"
+                  required
                 /><br>
               </div>
+              <!-- birthdate input -->
               <div
-                class="formData">
-                <label>Date de naissance</label><br>
+                class="formData"
+                data-error="Vous devez entrer votre date de naissance."
+                >
+                <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
+                  required
                 /><br>
               </div>
+              <!-- number input -->
               <div
-                class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                class="formData"
+                data-error= "Vous devez saisir un/des chiffre(s)."
+                >
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <input type="number" 
+                      class="text-control" id="quantity" name="quantity" min="0" max="99"
+                      >
               </div>
+              <!-- checkbox input -->
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
-                class="formData">
+                class="formData"
+                data-error="Vous devez choisir une option.."
+                >
+                <!-- location1 -->
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -122,6 +149,7 @@
                   <span class="checkbox-icon"></span>
                   New York</label
                 >
+                <!-- location2 -->
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -133,6 +161,7 @@
                   <span class="checkbox-icon"></span>
                   San Francisco</label
                 >
+                <!-- location3 -->
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -144,6 +173,7 @@
                   <span class="checkbox-icon"></span>
                   Seattle</label
                 >
+                <!-- location4 -->
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -155,6 +185,7 @@
                   <span class="checkbox-icon"></span>
                   Chicago</label
                 >
+                <!-- location5 -->
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -166,6 +197,7 @@
                   <span class="checkbox-icon"></span>
                   Boston</label
                 >
+                <!-- location6 -->
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -178,9 +210,12 @@
                   Portland</label
                 >
               </div>
-
+              <!-- confirm checkbox -->
               <div
-                class="formData">
+                class="formData"
+                data-error="Vous devez vérifier que vous acceptez les termes et conditions."
+                
+                >
                 <input
                   class="checkbox-input"
                   type="checkbox"
