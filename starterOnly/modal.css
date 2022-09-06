@@ -475,6 +475,45 @@ input[data-error]::after {
 .hero-section > .btn-signup {
   display: none;
 }
+
+
+
+
+.confirm-bg {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+}
+.confirm-modal {
+  display: none;
+  margin: 30% auto;
+  width: 100%;
+  max-width: 500px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.confirm-modal-btn {
+    font-size: 1rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+
 footer {
   padding-left: 2vw;
   padding-right: 2vw;
