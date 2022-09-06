@@ -28,9 +28,8 @@ const confirmModal = document.querySelector(".confirm-bg");
 const confirmModalText = document.querySelector(".confirm-modal");
 const confirmModalBtn = document.querySelector(".confirm-modal-btn");
 const formControl = document.getElementById("body-form");
-// email regular expressions
-const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
 
+const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -40,36 +39,23 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-// close modal function
+// close modal
 function closeModal(){
   modalbg.style.display = "none";
   confirmModal.style.display = "none";
 }
 
 // close modal by clicking 'X' icon
-closeIcon.addEventListener("click", ()=>{
-  closeModal();
-})
+closeIcon.addEventListener("click", closeModal);
 
-// close modal by ESC key
+// close confirmation modal
+confirmModalBtn.addEventListener("click", closeModal);
+
+// close modals by ESC key
 document.addEventListener('keydown', (e)=> {
   if (e.key === 'Escape') {
   closeModal();
   }
-});
-
-// close confirmation modal
-confirmModalBtn.addEventListener("click", () => 
-{
-  closeModal();
-});
-
-// close confirmation modal by ESC key
-confirmModalBtn.addEventListener("click", () => 
-{
-  if (e.key === 'Escape') {
-    closeModal();
-    }
 });
 
 
@@ -209,6 +195,7 @@ const confirmModalOn = () => {
 const errorsVisible = document.querySelectorAll('[data-error-visible="true"]');
 console.log(errorsVisible);
 
+// when error message is 0, open confirm modal.
   const noError = errorsVisible.length === 0;
   if(noError){
     confirmModal.style.display= "block";
