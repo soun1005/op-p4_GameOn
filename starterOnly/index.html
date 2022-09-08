@@ -19,23 +19,30 @@
   </head>
   <body>
     <div class="container">
-      <div class="topnav" id="myTopnav">
-        <div class="header-logo">
+      <header class="topnav" id="myTopnav">
+        <div class="header__logo">
           <img alt="logo" src="Logo.png" width="auto" height="auto" />
         </div>
         <!-- <div class="main-navbar"> -->
-        <div class="header-toggle">
+        <div class="header__toggle">
           <a href="javascript:void(0);" class="icon" onclick="editNav()">
             <i class="fa fa-bars"></i>
           </a>
         </div>
-        <div class="header-nav" id="nav-list">
+        <div class="header__nav" id="nav-list-desktop">
           <a href="#" class="active"><span>Accueil</span></a>
           <a href="#"><span>Détails de l'évènement</span></a>
           <a href="#"><span>À propos</span></a>
           <a href="#"><span>Contact</span></a>
           <a href="#"><span>Évènements passés</span></a>
         </div>
+      </header>
+      <div class="header__nav responsive" id="nav-list">
+        <a href="#" class="active"><span>Accueil</span></a>
+        <a href="#"><span>Détails de l'évènement</span></a>
+        <a href="#"><span>À propos</span></a>
+        <a href="#"><span>Contact</span></a>
+        <a href="#"><span>Évènements passés</span></a>
       </div>
 
       <main>

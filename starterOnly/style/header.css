@@ -5,24 +5,22 @@
     justify-content: space-between;
     align-items: center;
   }
-  .header-logo {
-  width: 15%;
-  }
+  .header__logo {
+  width: 15%;}
   
-  .header-logo img {
+  .header__logo img {
     width: 100%;
   }
   
-  .header-nav {
+  .header__nav {
    display: flex;
    min-width: 60vw;
    justify-content: right;
    align-items: center;
   }
   
-  .main-navbar .fa-bars {
-    /* font-size: 1.2rem;
-    color: #ff0000; */
+.header__nav.responsive {
+    display: none;
   }
   
   .topnav a {
@@ -30,99 +28,111 @@
     display: block;
     color: #000000;
     text-align: center;
-    padding: 12px 12px;
     margin: 5px;
     text-decoration: none;
     font-size: 1rem;
     font-family: Roboto, sans-serif;
   }
   
-  .header-nav a:hover {
+  .header__nav a:hover {
     border-radius: 15px;
   }
   
-  .header-nav a.active {
-    border-radius: 15px;
+  .header__nav a.active {
+    border-radius: 10px;
     background-color: #ff0000;
     color: white;
+    padding: 10px;
   }
   
   /* class name topnav - icon is invisible  */
-  .topnav .icon,
-  .header-nav {
+  .topnav .icon {
     display: none;
   }
   
-  /* smaller screens - icon is visible */
-  @media screen and (max-width: 768px) {
-    .topnav a {display: none;}
-    .topnav a.icon {
-        display: block;
-        font-size: 1.2rem;
-        color: #ff0000;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-        color: #fff;
-    }
-    .topnav.responsive a {
-        display: block;
-        /* position: absolute; */
-        text-align: left;
-        background-color: red;
-        /* display: flex; */
-        /* flex-direction: column; */
-        /* top: 4rem; */
-    }
-    .header-nav.responsive {
-      display: block;
-      height: 300px;
-      width: 100%;
-      position: absolute;
-      top: 4rem;
-      background-color: #fff;
-      right: 0;
-      z-index: 10;
-      padding: 2rem;
-      border-radius: 15px;
-    }
 
-    .header-nav.responsive a {
-      display: block;
-      color: #ff0000;
-    }
-    .header-nav.responsive .active {
-      color: #fff;
-    }
-  }
-  
-   @media screen and (max-width: 540px) {
-    .topnav {
-      height: 3rem;
-    }
-    .topnav a {display: none;}
-    .topnav a.icon {
-      display: block;
-    }
-  } 
+/*************** 
+responsive 
+****************/
 
-  @media screen and (max-width: 800px) {
-    .header-logo {
-      width: 100%;
-      }
-    .header-logo img {
-      width: 8rem;
-      padding: 0;
-    }
-  }
 
-  @media (max-width: 998px) {
+  /* smaller screens - topnav icon is visible */
+@media screen and (max-width: 768px) {
+/* topnav icon -> before clicked */
+.topnav a {display: none;}
+.topnav a.icon {
+  display: block;
+  font-size: 1.2rem;
+  color: #ff0000;
+  padding: 6px 7px 4px 7px;
+  border-radius: 5px;
+  position: fixed;
+  right: 2%;
+  top: 1%;
+}
+
+
+/* topnav icon -> after clicked */
+.topnav.responsive {
+  position: relative;
+}
+
+.topnav.responsive a {
+  display: block;
+  text-align: left;
+  background-color: red;
+}
+
+.topnav.responsive a.icon {
+  position: fixed;
+  right: 3%;
+  top: 1.5%;
+  color: #fff;
+  padding: 6px 7px 4px 7px;
+  margin: 0;
+}
+
+/* navigation before icon is clicked */
+.header__nav {
+display: none;
+}
+
+/* navigation after icon is clicked */
+.header__nav.responsive {
+  display: block;
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  top: 4rem;
+  background-color: #fff;
+  right: 0;
+  z-index: 10;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.header__nav.responsive a {
+  color: #ff0000;
+}
+.header__nav.responsive .active {
+color: #fff;
+}
+}
+
+
+/* @media screen and (max-width: 540px) {
+.topnav {
+height: 3rem;
+}
+.topnav a {display: none;}
+.topnav a.icon {
+display: block;
+}
+} 
+
+/* tablette version */
+@media (max-width: 998px) {
     .topnav a {
-
-    font-size: 14px;}}
+    font-size: 14px;
+  }
+}
