@@ -95,7 +95,7 @@
   }
   
   .content {
-    margin: 5% auto;
+    margin: auto;
     width: 100%;
     max-width: 500px;
     animation-name: modalopen;
@@ -106,6 +106,7 @@
     position: relative;
     color: #fff;
     padding-top: 10px;
+    top: 3.2rem;
   }
   
   .modal-body {
@@ -162,6 +163,7 @@
   .checkbox-label,
   .checkbox2-label {
     position: relative;
+    margin-top: 8px;
     margin-left: 36px;
     font-size: 12px;
     font-weight: normal;
@@ -262,7 +264,7 @@
   }
 
   #submit-input {
-    margin: 0 auto;
+    margin: 1rem auto;
   }
   /* custom select styles */
   .custom-select {
@@ -351,7 +353,7 @@
   }
   .confirm-modal {
     display: none;
-    margin: 30% auto;
+    margin: 5% auto;
     width: 100%;
     max-width: 500px;
     animation-name: modalopen;
@@ -366,18 +368,59 @@
     text-align: center;
   }
   
+  .confirm-modal-wrap {
+    padding: 11rem 0px;
+  }
+
   .confirm-modal-btn {
       font-size: 1rem;
       margin: 0 auto;
       margin-top: 2rem;
   }
   
+  #btn--close {
+    position: absolute;
+    bottom: 28px;
+    left: 30%;
+  }
   
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     .container {
       height: auto;
     }
     
+    .confirm-modal {
+      display: none;
+      margin: 2% auto; 
+    }
+
+
+
+    .btn-submit {
+        font-size: 1rem;
+        padding: 12px 36px;
+
+    }
+
+
+
+    .text-control {
+      margin: 0;
+      padding: 8px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 1rem;
+      height: 2.5rem;
+  }
+
+  label {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+
+
   }
   
   @keyframes modalopen {

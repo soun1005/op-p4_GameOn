@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="./style/normalize.css" />
+    <link rel="stylesheet" href="./style/modal.css" />
     <link rel="stylesheet" href="./style/header.css" />
     <link rel="stylesheet" href="./style/hero.css" />
     <link rel="stylesheet" href="./style/modal.css" />
@@ -23,7 +23,7 @@
     <div class="container">
       <header class="header" id="myTopnav">
         <div class="header__logo">
-          <img alt="logo" src="Logo.png" width="auto" height="auto" />
+          <img alt="logo" src="Logo.png" />
         </div>
         <!-- <div class="main-navbar"> -->
         <div class="header__toggle">
@@ -81,7 +81,7 @@
                 <!-- first name -->
                 <div
                   class="formData"
-                  data-error="Veuillez entrer 2 caractères ou plus pour le champ du prenom."
+                  data-error="Veuillez entrer 2 caractères ou plus."
                 >
                   <label for="first">Prénom</label>
                   <br />
@@ -97,7 +97,7 @@
                 <!-- last name  -->
                 <div
                   class="formData"
-                  data-error=" Veuillez entrer 2 caractères ou plus pour le champ du nom."
+                  data-error=" Veuillez entrer 2 caractères ou plus."
                 >
                   <label for="last">Nom</label>
                   <br />
@@ -243,7 +243,7 @@
                 <!-- confirm checkbox -->
                 <div
                   class="formData"
-                  data-error="Vous devez vérifier que vous acceptez les termes et conditions."
+                  data-error="Vous devez accepter les conditions."
                 >
                   <input
                     class="checkbox-input"
@@ -251,7 +251,7 @@
                     id="checkbox1"
                     checked
                   />
-                  <label class="checkbox2-label" for="checkbox1" required>
+                  <label class="checkbox2-label" for="checkbox1">
                     <span class="checkbox-icon"></span>
                     J'ai lu et accepté les conditions d'utilisation.
                   </label>
@@ -269,9 +269,8 @@
                 </div>
                 <!-- confirm btn -->
                 <input
-                  class="btn-submit"
+                  class="btn-submit button"
                   type="submit"
-                  class="button"
                   value="C'est parti"
                   id="submit-input"
                 />
@@ -281,9 +280,13 @@
         </div>
         <!-- confirmation modal -->
         <div class="confirm-bg">
-          <div class="confirm-modal modal-body">
-            <p>Merci pour l'inscription!</p>
-            <button class="confirm-modal-btn btn-signup">Fermer</button>
+          <div class="confirm-modal content">
+            <div class="confirm-modal-wrap">
+              <p>Merci pour l'inscription!</p>
+              <button class="confirm-modal-btn hero__btn-signup btn--close">
+                Fermer
+              </button>
+            </div>
           </div>
         </div>
       </main>
