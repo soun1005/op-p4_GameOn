@@ -25,12 +25,12 @@ const locationRadio = document.querySelectorAll(
 function editNav() {
   let y = document.getElementById("nav-list");
   let x = document.getElementById("myTopnav");
-  if (x.className === "topnav" && y.className === "header-nav") {
+  if (x.className === "header" && y.className === "header__nav") {
     x.className += " responsive"
     y.className += " responsive";
   } else {
-    x.className = "topnav";
-    y.className = "header-nav";
+    x.className = "header";
+    y.className = "header__nav";
   }
 }
 

@@ -4,10 +4,12 @@
     <meta charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="./style/modal.css" />
     <link rel="stylesheet" href="./style/normalize.css" />
-    <link rel="stylesheet" href="./style/hero.css" />
     <link rel="stylesheet" href="./style/header.css" />
+    <link rel="stylesheet" href="./style/hero.css" />
+    <link rel="stylesheet" href="./style/modal.css" />
+    <link rel="stylesheet" href="./style/footer.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -19,7 +21,7 @@
   </head>
   <body>
     <div class="container">
-      <header class="topnav" id="myTopnav">
+      <header class="header" id="myTopnav">
         <div class="header__logo">
           <img alt="logo" src="Logo.png" width="auto" height="auto" />
         </div>
@@ -37,7 +39,7 @@
           <a href="#"><span>Évènements passés</span></a>
         </div>
       </header>
-      <div class="header__nav responsive" id="nav-list">
+      <div class="header__nav" id="nav-list">
         <a href="#" class="active"><span>Accueil</span></a>
         <a href="#"><span>Détails de l'évènement</span></a>
         <a href="#"><span>À propos</span></a>
@@ -46,23 +48,23 @@
       </div>
 
       <main>
-        <div class="hero-section">
-          <div class="hero-content">
-            <h1 class="hero-headline">
+        <div class="hero">
+          <div class="hero__content">
+            <h1 class="hero__headline">
               Marathon national
               <br />
               de jeux vidéos
             </h1>
-            <p class="hero-text">
+            <p class="hero__text">
               Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux
               réservations... Places limitées !
             </p>
-            <button class="btn-signup modal-btn">je m'inscris</button>
+            <button class="hero__btn-signup modal-btn">je m'inscris</button>
           </div>
-          <div class="hero-img">
+          <div class="hero__img">
             <img src="./bg_img.jpg" alt="img" />
           </div>
-          <button class="btn-signup modal-btn">je m'inscris</button>
+          <button class="hero__btn-signup modal-btn">je m'inscris</button>
         </div>
         <!-- Modal -->
         <div class="bground">
@@ -271,6 +273,7 @@
                   type="submit"
                   class="button"
                   value="C'est parti"
+                  id="submit-input"
                 />
               </form>
             </div>
