@@ -1,12 +1,3 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -20,16 +11,30 @@ const lName = document.getElementById("last");
 const enteredEmail = document.getElementById("email");
 const birthdate = document.getElementById("birthdate");
 const quantity = document.getElementById("quantity");
-const locationRadio = document.querySelectorAll(
-  "input[name=location]"
-)
 const agreeBox = document.getElementById("checkbox1");
 const confirmModal = document.querySelector(".confirm-bg");
 const confirmModalText = document.querySelector(".confirm-modal");
 const confirmModalBtn = document.querySelector(".confirm-modal-btn");
 const formControl = document.getElementById("body-form");
-
 const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
+const locationRadio = document.querySelectorAll(
+  "input[name=location]"
+)
+
+// Nav bar
+function editNav() {
+  let y = document.getElementById("nav-list");
+  let x = document.getElementById("myTopnav");
+  if (x.className === "topnav" && y.className === "header-nav") {
+    x.className += " responsive"
+    y.className += " responsive";
+  } else {
+    x.className = "topnav";
+    y.className = "header-nav";
+  }
+}
+
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -58,8 +63,6 @@ document.addEventListener('keydown', (e)=> {
   }
 });
 
-
-
 /***************************************** 
 Validation check.
 
@@ -76,7 +79,6 @@ const firstNameValidation = () => {
   }
 }
 
-
 const lastNameValidation = () => {
   if (lName.value == "" || lName.value.length < 2) {
         lName.parentNode.setAttribute("data-error-visible", "true");
@@ -87,7 +89,6 @@ const lastNameValidation = () => {
     // lName.removeAttribute("data-error-visible");
   }
 }
-
 
 /*********************
 2. Email validation.
@@ -203,4 +204,3 @@ console.log(errorsVisible);
     modalbg.style.display = "none";
   }
 }
-
