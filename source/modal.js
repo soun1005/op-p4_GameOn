@@ -107,6 +107,7 @@ const emailValidation = () => {
 /********************
 3. B-day validation.
 *********************/
+
 const bdayValidation = () => {
   if(birthdate.value == ""){
     birthdate.parentNode.setAttribute("data-error-visible", "true");
@@ -115,6 +116,33 @@ const bdayValidation = () => {
     birthdate.parentNode.setAttribute("data-error-visible", "false");
   }
 }
+
+// input date control
+
+// let today as today.
+let today = new Date();
+
+// let dd as today's date.
+let dd = today.getDate();
+
+// let mm as today's month
+let mm = today.getMonth() + 1; //January is 0!
+
+// let yyyy as today's year
+let yyyy = today.getFullYear();
+
+// if today's day is smaller than 10, add 0 (so July is 07 instead of 7)
+if (dd < 10) {
+   dd = '0' + dd;
+}
+if (mm < 10) {
+   mm = '0' + mm;
+} 
+
+today = yyyy + '-' + mm + '-' + dd;
+// the max date for HTML input type date is set to today.
+birthdate.setAttribute("max", today);
+
 
 /***************************************  
 4. Participation quantity validation.
