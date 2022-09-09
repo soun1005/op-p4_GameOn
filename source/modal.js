@@ -17,6 +17,8 @@ const confirmModalText = document.querySelector(".confirm-modal");
 const confirmModalBtn = document.querySelector(".confirm-modal-btn");
 const formControl = document.getElementById("body-form");
 const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
+const fNameRegex = /[a-zA-Z]+/i;
+const lNameRegex = /\s+.*[a-zA-Z]+/i;
 const locationRadio = document.querySelectorAll(
   "input[name=location]"
 )
@@ -70,9 +72,8 @@ Validation check.
 ******************************************/
 
 const firstNameValidation = () => {
-  if (fName.value == "" || fName.value.length < 2) {
+  if (fName.value == "" || fName.value.length < 2 || !fName.value.match(fNameRegex)) {
         fName.parentNode.setAttribute("data-error-visible", "true");
-        return false;
       }
   else {
     fName.parentNode.setAttribute("data-error-visible", "false");
@@ -80,13 +81,11 @@ const firstNameValidation = () => {
 }
 
 const lastNameValidation = () => {
-  if (lName.value == "" || lName.value.length < 2) {
+  if (lName.value == "" || lName.value.length < 2 || !lName.value.match(lNameRegex)) {
         lName.parentNode.setAttribute("data-error-visible", "true");
-        return false;
       }
   else {
     lName.parentNode.setAttribute("data-error-visible", "false");
-    // lName.removeAttribute("data-error-visible");
   }
 }
 
@@ -94,14 +93,12 @@ const lastNameValidation = () => {
 2. Email validation.
 **********************/
 const emailValidation = () => {
-  if(!enteredEmail.value.match(mailRegex)) {
+  if(!enteredEmail.value.match(mailRegex) || enteredEmail.value == "") {
     enteredEmail.parentNode.setAttribute("data-error-visible", "true");
-    return false;
   }
-  if(enteredEmail.value == ""){
-    enteredEmail.parentNode.setAttribute("data-error-visible", "true");
-    return false;
-  }
+  // if(){
+  //   enteredEmail.parentNode.setAttribute("data-error-visible", "true");
+  // }
   else {
     enteredEmail.parentNode.setAttribute("data-error-visible", "false");
   }
@@ -113,7 +110,6 @@ const emailValidation = () => {
 const bdayValidation = () => {
   if(birthdate.value == ""){
     birthdate.parentNode.setAttribute("data-error-visible", "true");
-    return false;
   }
   else{
     birthdate.parentNode.setAttribute("data-error-visible", "false");
@@ -126,7 +122,6 @@ const bdayValidation = () => {
 const quantityValidation = () => {
   if(quantity.value == "") {
     quantity.parentNode.setAttribute("data-error-visible", "true");
-    return false;
   }
   else {
     quantity.parentNode.setAttribute("data-error-visible", "false");
@@ -145,7 +140,6 @@ let isChecked = false;
   });
   if(!isChecked) {
     locationRadio[0].parentNode.setAttribute("data-error-visible", "true");
-    return false;
   }
   else {
     locationRadio[0].parentNode.setAttribute("data-error-visible", "false");
@@ -158,7 +152,6 @@ let isChecked = false;
 const checkboxValidation = () => {
   if(agreeBox.checked == false) {
     agreeBox.parentNode.setAttribute("data-error-visible", "true");
-    return false;
   }
   else{
     agreeBox.parentNode.setAttribute("data-error-visible", "false");
@@ -192,11 +185,9 @@ To open 'Confirm' modal.
 *************************/
 
 const confirmModalOn = () => {
-// when the validation failed
-const errorsVisible = document.querySelectorAll('[data-error-visible="true"]');
-console.log(errorsVisible);
-
-// when error message is 0, open confirm modal.
+  // when the validation failed
+  const errorsVisible = document.querySelectorAll('[data-error-visible="true"]');
+  // when error message is 0, open confirm modal.
   const noError = errorsVisible.length === 0;
   if(noError){
     confirmModal.style.display= "block";
