@@ -8,7 +8,7 @@ Developed by HTML, CSS and JavaScript
 
 Link 👉🏻 [GameOn](soun1005.github.io/op-p4_gameon/)
 
-![App Screenshot](https://github.com/soun1005/op-p3_Ohmyfood/blob/main/presentation.jpeg)
+![App Screenshot](https://github.com/soun1005/op-p4_GameOn/blob/presentation.jpeg)
 
 ## Sign-up form features
 
