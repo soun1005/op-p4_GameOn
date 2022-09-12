@@ -6,22 +6,19 @@ const closeIcon = document.querySelector(".close");
 const submitBtn = document.getElementById("submit-form");
 const input = document.getElementsByTagName("input");
 const form = document.querySelector('form');
-const fName = document.getElementById("first");
-const lName = document.getElementById("last");
-const enteredEmail = document.getElementById("email");
-const birthdate = document.getElementById("birthdate");
-const quantity = document.getElementById("quantity");
-const agreeBox = document.getElementById("checkbox1");
 const confirmModal = document.querySelector(".confirm-bg");
 const confirmModalText = document.querySelector(".confirm-modal");
 const confirmModalBtn = document.querySelector(".confirm-modal-btn");
 const formControl = document.getElementById("body-form");
-const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
-const fNameRegex = /[a-zA-Z]+/i;
-const lNameRegex = /\s+.*[a-zA-Z]+/i;
 const locationRadio = document.querySelectorAll(
   "input[name=location]"
 )
+
+// regex to control names and email.
+const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
+const nameRegex = /[a-zA-Z]+/i;
+// const lNameRegex = /[a-zA-Z]+/i;
+// // const lNameRegex = /\s+.*[a-zA-Z]+/i;
 
 // Nav bar
 function editNav() {
@@ -35,8 +32,6 @@ function editNav() {
     y.className = "header__nav";
   }
 }
-
-
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -72,7 +67,8 @@ Validation check.
 ******************************************/
 
 const firstNameValidation = () => {
-  if (fName.value == "" || fName.value.length < 2 || !fName.value.match(fNameRegex)) {
+  const fName = document.getElementById("first");
+  if (fName.value === "" || fName.value.length < 2 || !fName.value.match(nameRegex)) {
         fName.parentNode.setAttribute("data-error-visible", "true");
       }
   else {
@@ -81,7 +77,8 @@ const firstNameValidation = () => {
 }
 
 const lastNameValidation = () => {
-  if (lName.value == "" || lName.value.length < 2 || !lName.value.match(lNameRegex)) {
+  const lName = document.getElementById("last");
+  if (lName.value === "" || lName.value.length < 2 || !lName.value.match(nameRegex)) {
         lName.parentNode.setAttribute("data-error-visible", "true");
       }
   else {
@@ -93,12 +90,10 @@ const lastNameValidation = () => {
 2. Email validation.
 **********************/
 const emailValidation = () => {
-  if(!enteredEmail.value.match(mailRegex) || enteredEmail.value == "") {
+  const enteredEmail = document.getElementById("email");
+  if(!enteredEmail.value.match(mailRegex) || enteredEmail.value === "") {
     enteredEmail.parentNode.setAttribute("data-error-visible", "true");
   }
-  // if(){
-  //   enteredEmail.parentNode.setAttribute("data-error-visible", "true");
-  // }
   else {
     enteredEmail.parentNode.setAttribute("data-error-visible", "false");
   }
@@ -109,7 +104,8 @@ const emailValidation = () => {
 *********************/
 
 const bdayValidation = () => {
-  if(birthdate.value == ""){
+  const birthdate = document.getElementById("birthdate");
+  if(birthdate.value === ""){
     birthdate.parentNode.setAttribute("data-error-visible", "true");
   }
   else{
@@ -133,13 +129,14 @@ let yyyy = today.getFullYear();
 
 // if today's day is smaller than 10, add 0 (so July is 07 instead of 7)
 if (dd < 10) {
-   dd = '0' + dd;
+  dd = `0${dd}`;
 }
 if (mm < 10) {
-   mm = '0' + mm;
+  mm = `0${mm}`;
 } 
 
-today = yyyy + '-' + mm + '-' + dd;
+today = `${yyyy}-${mm}-${dd}`;
+
 // the max date for HTML input type date is set to today.
 birthdate.setAttribute("max", today);
 
@@ -148,6 +145,7 @@ birthdate.setAttribute("max", today);
 4. Participation quantity validation.
 ****************************************/
 const quantityValidation = () => {
+  const quantity = document.getElementById("quantity");
   if(quantity.value == "") {
     quantity.parentNode.setAttribute("data-error-visible", "true");
   }
@@ -178,7 +176,8 @@ let isChecked = false;
 6. Checkbox validation. 
 ***********************/
 const checkboxValidation = () => {
-  if(agreeBox.checked == false) {
+  const agreeBox = document.getElementById("checkbox1");
+  if(agreeBox.checked === false) {
     agreeBox.parentNode.setAttribute("data-error-visible", "true");
   }
   else{
@@ -220,6 +219,8 @@ const confirmModalOn = () => {
   if(noError){
     confirmModal.style.display= "block";
     confirmModalText.style.display= "block";
+    // when there is no error, close input modal.
     modalbg.style.display = "none";
+    formControl.reset();
   }
 }

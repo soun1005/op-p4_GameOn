@@ -1,3 +1,6 @@
+
+
+
 .header {
     overflow: hidden;
     margin: 3.5%;
@@ -37,7 +40,10 @@
   }
   
   .header__nav a:hover {
-    border-radius: 15px;
+    border-radius: 10px;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px;
   }
   
   .header__nav a.active {
@@ -62,13 +68,13 @@ responsive
 @media screen and (max-width: 768px) {
 /* header.header__logo icon -> before clicked */
 
-.header__logo {
-  width: 30%;
-  width: 35%;
-    margin-top: 5px;
-}
+  .header__logo {
+    width: 30%;
+    width: 35%;
+      margin-top: 5px;
+  }
 
-.header a {display: none;}
+  .header a {display: none;}
     .header a.icon {
       display: block;
       font-size: 1.2rem;
@@ -110,17 +116,17 @@ responsive
     /* navigation after icon is clicked */
     #nav-list.responsive {
       display: flex;
-      height: 230px;
+      height: 15rem;
       width: 67%;
       position: absolute;
-      top: 3.4rem;
+      top: 3rem;
       background-color: #fff;
       right: 0;
       z-index: 10;
       padding: 1rem;
       border-radius: 15px;
       flex-direction: column;
-      gap: 10%;
+      gap: 9%;
       align-items: center;
       border: 2px #ff0000 solid;
     }

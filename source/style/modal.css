@@ -1,50 +1,4 @@
-:root {
-    --font-default: "DM Sans", Arial, Helvetica, sans-serif;
-    --font-slab: var(--font-default);
-    --modal-duration: 0.8s;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  /* Landing Page */
-  
-  body {
-    margin: 0 auto;
-  }
-  
-  .container {
-    max-width: 1400px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: var(--font-default);
-    min-height: 100vh;
-  }
-  
-  p {
-    margin-bottom: 0;
-    padding: 0.5vw;
-  }
-  
-  img {
-    padding-right: 1rem;
-  }
-  
-  main {
-    font-size: 130%;
-    font-weight: bolder;
-    color: black;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    margin: 1px 20px 15px;
-    border-radius: 2rem;
-    text-align: justify;
-  }
-  
-  .modal-btn {
+.modal-btn {
     font-size: 145%;
     background: #fe142f;
     display: flex;
@@ -60,10 +14,7 @@
     background: #3876ac;
   }
   
-
-  
   /* Modal form */
-  
   .button {
     background: #fe142f;
     margin-top: 0.5em;
@@ -134,6 +85,8 @@
     font-size: 20px;
     height: 48px;
   }
+
+  /* error message */
   .formData[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
@@ -149,16 +102,16 @@
   .formData[data-error-visible="true"]::after {
     opacity: 1;
   }
-  .formData[data-error-visible="true"] .text-control {
+  /* .formData[data-error-visible="true"] .text-control {
     border: 2px solid #e54858;
-  }
+  } */
   
-  /* error message */
+  /* error message
   input[data-error]::after {
       content: attr(data-error);
       font-size: 0.4em;
       color: red;
-  }
+  } */
   
   .checkbox-label,
   .checkbox2-label {
@@ -394,15 +347,11 @@
       margin: 2% auto; 
     }
 
-
-
     .btn-submit {
         font-size: 1rem;
         padding: 12px 36px;
 
     }
-
-
 
     .text-control {
       margin: 0;
@@ -417,9 +366,6 @@
     font-size: 16px;
     margin-bottom: 10px;
 }
-
-
-
 
   }
   

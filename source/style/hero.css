@@ -75,10 +75,6 @@
             top: 0;
         }
 
-        .hero__content::after {
-
-        }
-
         .hero__headline {
             font-size: 4rem;
         }
@@ -89,7 +85,7 @@
   }
 
 /* phone */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
     .hero {
       display: block;
       box-shadow: unset;
