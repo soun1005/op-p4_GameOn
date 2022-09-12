@@ -105,15 +105,38 @@ const emailValidation = () => {
 
 const bdayValidation = () => {
   const birthdate = document.getElementById("birthdate");
-  if(birthdate.value === ""){
+  // today's date
+  let currentDate = new Date();
+
+  // to get the date from input
+  let selectedDate = document.getElementById("birthdate").value;
+
+  // the date that user selected
+  let userBday = new Date(selectedDate);
+
+  // diff : current date minus user's birthday
+	let diff = new Date(currentDate - userBday);
+
+	let age = Math.abs(diff.getUTCFullYear() - 1970);
+
+  if(birthdate.value === "" ){
     birthdate.parentNode.setAttribute("data-error-visible", "true");
   }
+
+  else if(
+    age <= 18
+  ) {
+    birthdate.parentNode.setAttribute("data-error", " Vous ne pouvez pas vous inscrire si vous êtes mineur.")
+  }
+
   else{
     birthdate.parentNode.setAttribute("data-error-visible", "false");
   }
 }
 
-// input date control
+
+
+// unable to choose birthdate after today
 
 // let today as today.
 let today = new Date();
