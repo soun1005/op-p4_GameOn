@@ -6,9 +6,9 @@ A landing page for a game conferences and contests company.
 
 Developed by HTML, CSS and JavaScript
 
-Link 👉🏻 [GameOn](soun1005.github.io/op-p4_gameon/)
+Link 👉🏻 [GameOn](https://soun1005.github.io/op-p4_GameOn/)
 
-![App Screenshot](https://github.com/soun1005/op-p4_GameOn/blob/presentation.jpeg)
+![App Screenshot](https://github.com/soun1005/op-p4_GameOn/blob/master/presentation.jpeg)
 
 ## Features
 
