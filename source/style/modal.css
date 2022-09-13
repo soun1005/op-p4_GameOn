@@ -294,11 +294,6 @@
     background-color: rgba(26, 39, 156, 0.4);
   }
 
-  /* .close-confirm {
-    top: 78px;
-    z-index: 1;
-  }  */
-
   .confirm-modal {
     display: none;
     height: 80%;
@@ -324,7 +319,7 @@
   }
 
   .confirm-modal-wrap p {
-  margin: auto;
+    margin: auto;
     font-size: 3rem;
     
   }
@@ -359,7 +354,7 @@
     }
 
     .confirm-modal-wrap p {
-margin: auto;
+      margin: auto;
       font-size: 2rem;
     }
 
