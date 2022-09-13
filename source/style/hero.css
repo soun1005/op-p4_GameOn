@@ -84,7 +84,6 @@
     }
   }
 
-/* phone & tablette */
 @media screen and (max-width: 768px) {
   .hero {
     display: block;

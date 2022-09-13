@@ -1,4 +1,4 @@
-.header {
+#myTopnav {
     overflow: hidden;
     margin: 3.5%;
     display: flex;
@@ -6,37 +6,39 @@
     align-items: center;
   }
 
-  .header__logo {
+.header__logo {
   width: 20%;
-    }
-  
-  .header__logo img {
-    width: 100%;
   }
+
+.header__logo img {
+  max-width: 9rem;
+}
+
+#nav-list-desktop {
+  display: flex;
+  min-width: 60vw;
+  justify-content: right;
+  align-items: center;
+}
   
-  #nav-list-desktop {
-   display: flex;
-   min-width: 60vw;
-   justify-content: right;
-   align-items: center;
-  }
+#nav-list {
+  display: none;
+}
+
+.header a {
+  margin: auto;
+  display: block;
+  color: #000000;
+  text-align: center;
+  margin: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+  margin-left: 1rem;
+  padding: 10px;
+}
   
-  #nav-list {
-    display: none;
-  }
-  
-  .header a {
-    margin: auto;
-    display: block;
-    color: #000000;
-    text-align: center;
-    margin: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: Roboto, sans-serif;
-    margin-left: 1rem;
-  }
-  
+  /* phone and desktop version */
   .header__nav a:active {
     border-radius: 10px;
     background-color: #ff0000;
@@ -52,7 +54,7 @@
   }
   
   /* class name header.header__logo - icon is invisible  */
-  .header .icon {
+  #myTopnav .icon {
     display: none;
   }
   
@@ -69,8 +71,11 @@ responsive
     margin-top: 5px;
   }
 
-  .header a {display: none;}
-  .header a.icon {
+  #myTopnav a {
+    display: none;
+  }
+
+  #myTopnav a.icon {
     display: block;
     font-size: 1.2rem;
     color: #ff0000;
@@ -82,17 +87,17 @@ responsive
   }
 
   /* header.header__logo icon -> after clicked */
-  .header.responsive {
+  #myTopnav.responsive {
     position: relative;
   }
 
-  .header.responsive a {
+  #myTopnav.responsive a {
     display: block;
     text-align: left;
     background-color: red;
   }
 
-  .header.responsive a.icon {
+  #myTopnav.responsive a.icon {
     position: fixed;
     right: 3%;
     top: 1.5%;
@@ -125,17 +130,17 @@ responsive
     animation-duration: var(--modal-duration);
   }
 
-  .header__nav.responsive a {
+  #nav-list.responsive a {
     color: #ff0000;
     text-decoration: none;
     padding: 10px;
   }
 
-  .header__nav.responsive a:active {
+  #nav-list.responsive a:active {
     color: #fff;
   }
 
-  .header__nav.responsive .active {
+  #nav-list.responsive .active {
   color: #fff;
   }
 }
@@ -143,5 +148,9 @@ responsive
 @media screen and (max-width: 998px) {
     .header__logo a {
     font-size: 14px;
+  }
+
+  .header a {
+    font-size: 13px;
   }
 }

@@ -147,9 +147,9 @@ const bdayValidation = () => {
   else if(
     age <= 18
   ) {
-    birthdate.parentNode.setAttribute("data-error", " Vous ne pouvez pas vous inscrire si vous êtes mineur.")
+    birthdate.parentNode.setAttribute("data-error", 
+    " Vous ne pouvez pas vous inscrire si vous êtes mineur.")
   }
-
   else{
     setAttr(birthdate);
   }
