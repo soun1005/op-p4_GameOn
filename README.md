@@ -10,12 +10,13 @@ Link 👉🏻 [GameOn](soun1005.github.io/op-p4_gameon/)
 
 ![App Screenshot](https://github.com/soun1005/op-p4_GameOn/blob/presentation.jpeg)
 
-## Sign-up form features
+## Features
 
     1. Close modal window by X icon or ESC.
     2. Each inputs with proper validations.
     3. Error messages when given information is not valid.
-    4. Confirmation modal
+    4. Confirmation modal when inputs are validated.
+    5. Reset sign-up modal when validated.
 
 ## Tools Used
 

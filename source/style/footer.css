@@ -5,7 +5,6 @@ footer {
     font-family: var(--font-slab);
   }
 
-
   .copyrights {
     color: #fe142f;
     padding: 0;
@@ -14,8 +13,7 @@ footer {
     font-weight: bolder;
   }
 
-
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     .copyrights {
         /* text-align: center;
         margin: 1rem 0;

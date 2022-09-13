@@ -1,26 +1,28 @@
-// DOM Elements
+/*************
+DOM Elements
+**************/
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeIcon = document.querySelector(".close");
 const submitBtn = document.getElementById("submit-form");
-const input = document.getElementsByTagName("input");
-const form = document.querySelector('form');
+const formControl = document.getElementById("body-form");
 const confirmModal = document.querySelector(".confirm-bg");
 const confirmModalText = document.querySelector(".confirm-modal");
 const confirmModalBtn = document.querySelector(".confirm-modal-btn");
-const formControl = document.getElementById("body-form");
 const locationRadio = document.querySelectorAll(
   "input[name=location]"
 )
 
-// regex to control names and email.
+/*****
+REGEX
+******/
 const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
 const nameRegex = /[a-zA-Z]+/i;
-// const lNameRegex = /[a-zA-Z]+/i;
-// // const lNameRegex = /\s+.*[a-zA-Z]+/i;
 
-// Nav bar
+/*******
+Nav Bar
+********/
 function editNav() {
   let y = document.getElementById("nav-list");
   let x = document.getElementById("myTopnav");
@@ -33,21 +35,25 @@ function editNav() {
   }
 }
 
-// launch modal event
+/************
+Launch modal
+*************/
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
-// close modal
+
+/************
+Close modal
+*************/
 function closeModal(){
   modalbg.style.display = "none";
   confirmModal.style.display = "none";
 }
 
-// close modal by clicking 'X' icon
+// close modal by 'X' icon
 closeIcon.addEventListener("click", closeModal);
 
 // close confirmation modal
@@ -60,29 +66,43 @@ document.addEventListener('keydown', (e)=> {
   }
 });
 
-/***************************************** 
-Validation check.
 
+/**********************************************************
+Error message control
+Parameter(name) is each input. 
+When user information is not validated, show error message, 
+when it's validated, error message on HTML is set to false.
+***********************************************************/
+function addAttr(name) {
+  (name).parentNode.setAttribute("data-error-visible", "true");
+}
+
+// when input is validated - no error msg
+function setAttr(name) {
+  (name).parentNode.setAttribute("data-error-visible", "false");
+}
+
+/************************************* 
 1. First name & Last name validation.
-******************************************/
+**************************************/
 
 const firstNameValidation = () => {
   const fName = document.getElementById("first");
   if (fName.value === "" || fName.value.length < 2 || !fName.value.match(nameRegex)) {
-        fName.parentNode.setAttribute("data-error-visible", "true");
+      addAttr(fName);
       }
   else {
-    fName.parentNode.setAttribute("data-error-visible", "false");
+    setAttr(fName);
   }
 }
 
 const lastNameValidation = () => {
   const lName = document.getElementById("last");
   if (lName.value === "" || lName.value.length < 2 || !lName.value.match(nameRegex)) {
-        lName.parentNode.setAttribute("data-error-visible", "true");
+        addAttr(lName);
       }
   else {
-    lName.parentNode.setAttribute("data-error-visible", "false");
+    setAttr(lName);
   }
 }
 
@@ -92,10 +112,10 @@ const lastNameValidation = () => {
 const emailValidation = () => {
   const enteredEmail = document.getElementById("email");
   if(!enteredEmail.value.match(mailRegex) || enteredEmail.value === "") {
-    enteredEmail.parentNode.setAttribute("data-error-visible", "true");
+    addAttr(enteredEmail);
   }
   else {
-    enteredEmail.parentNode.setAttribute("data-error-visible", "false");
+    setAttr(enteredEmail);
   }
 }
 
@@ -107,20 +127,17 @@ const bdayValidation = () => {
   const birthdate = document.getElementById("birthdate");
   // today's date
   let currentDate = new Date();
-
   // to get the date from input
   let selectedDate = document.getElementById("birthdate").value;
-
   // the date that user selected
   let userBday = new Date(selectedDate);
-
   // diff : current date minus user's birthday
 	let diff = new Date(currentDate - userBday);
 
 	let age = Math.abs(diff.getUTCFullYear() - 1970);
 
   if(birthdate.value === "" ){
-    birthdate.parentNode.setAttribute("data-error-visible", "true");
+    addAttr(birthdate);
   }
 
   else if(
@@ -130,23 +147,20 @@ const bdayValidation = () => {
   }
 
   else{
-    birthdate.parentNode.setAttribute("data-error-visible", "false");
+    setAttr(birthdate);
   }
 }
 
-
-
-// unable to choose birthdate after today
+/**********************************************
+3-1. Date select unable to choose after today.
+***********************************************/
 
 // let today as today.
 let today = new Date();
-
 // let dd as today's date.
 let dd = today.getDate();
-
 // let mm as today's month
 let mm = today.getMonth() + 1; //January is 0!
-
 // let yyyy as today's year
 let yyyy = today.getFullYear();
 
@@ -170,10 +184,10 @@ birthdate.setAttribute("max", today);
 const quantityValidation = () => {
   const quantity = document.getElementById("quantity");
   if(quantity.value == "") {
-    quantity.parentNode.setAttribute("data-error-visible", "true");
+    addAttr(quantity);
   }
   else {
-    quantity.parentNode.setAttribute("data-error-visible", "false");
+    setAttr(quantity);
   }
 }
 
@@ -188,10 +202,10 @@ let isChecked = false;
     }
   });
   if(!isChecked) {
-    locationRadio[0].parentNode.setAttribute("data-error-visible", "true");
+    addAttr(locationRadio[0]);
   }
   else {
-    locationRadio[0].parentNode.setAttribute("data-error-visible", "false");
+    setAttr(locationRadio[0]);
   }
 }
 
@@ -201,10 +215,10 @@ let isChecked = false;
 const checkboxValidation = () => {
   const agreeBox = document.getElementById("checkbox1");
   if(agreeBox.checked === false) {
-    agreeBox.parentNode.setAttribute("data-error-visible", "true");
+    addAttr(agreeBox);
   }
   else{
-    agreeBox.parentNode.setAttribute("data-error-visible", "false");
+    setAttr(agreeBox);
   }
 }
 
@@ -213,12 +227,11 @@ const checkboxValidation = () => {
 All validation functions combined.
 When submit btn is clicked -> validate all inputs. 
 ************************************/
-
 const validate = (event) => {
   // to prevent all inputs being default after 'c'est parti'
   event.preventDefault();
 
-  //to trigger the annonymous functions for each inputs
+  // to trigger the annonymous functions for each inputs
   firstNameValidation();
   lastNameValidation();
   emailValidation();
@@ -226,14 +239,13 @@ const validate = (event) => {
   quantityValidation();
   radioValidation();
   checkboxValidation();
-
+  // to show confirmation modal
   confirmModalOn();
   } 
 
 /************************
 To open 'Confirm' modal.
 *************************/
-
 const confirmModalOn = () => {
   // when the validation failed
   const errorsVisible = document.querySelectorAll('[data-error-visible="true"]');
@@ -244,6 +256,7 @@ const confirmModalOn = () => {
     confirmModalText.style.display= "block";
     // when there is no error, close input modal.
     modalbg.style.display = "none";
+    // reset modal when everything is validated.
     formControl.reset();
   }
 }
