@@ -324,7 +324,7 @@
   }
 
   .confirm-modal-wrap p {
-    margin-top: 40%;
+  margin: auto;
     font-size: 3rem;
     
   }
@@ -359,7 +359,7 @@
     }
 
     .confirm-modal-wrap p {
-      margin-top: 50%;
+margin: auto;
       font-size: 2rem;
     }
 

@@ -110,19 +110,19 @@ responsive
   /* navigation after icon is clicked */
   #nav-list.responsive {
     display: flex;
-    height: 17rem;
     width: 100%;
     position: absolute;
     top: 3rem;
     background-color: #fff;
-    right: 0;
     z-index: 10;
-    padding: 1rem;
+    padding: 1.4rem;
     border-radius: 15px;
     flex-direction: column;
-    gap: 7px;
-    align-items: center;
+    gap: 5px;
     border: 2px #ff0000 solid;
+    text-align: center;
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
   }
 
   .header__nav.responsive a {
