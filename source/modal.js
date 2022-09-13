@@ -10,6 +10,7 @@ const formControl = document.getElementById("body-form");
 const confirmModal = document.querySelector(".confirm-bg");
 const confirmModalText = document.querySelector(".confirm-modal");
 const confirmModalBtn = document.querySelector(".confirm-modal-btn");
+const closeConfirmIcon = document.getElementById("confirm-close-icon");
 const locationRadio = document.querySelectorAll(
   "input[name=location]"
 )
@@ -55,6 +56,7 @@ function closeModal(){
 
 // close modal by 'X' icon
 closeIcon.addEventListener("click", closeModal);
+closeConfirmIcon.addEventListener("click", closeModal);
 
 // close confirmation modal
 confirmModalBtn.addEventListener("click", closeModal);
@@ -65,6 +67,8 @@ document.addEventListener('keydown', (e)=> {
   closeModal();
   }
 });
+
+
 
 
 /**********************************************************
