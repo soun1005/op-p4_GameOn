@@ -150,6 +150,7 @@ const bdayValidation = () => {
     birthdate.parentNode.setAttribute("data-error", 
     " Vous ne pouvez pas vous inscrire si vous êtes mineur.")
   }
+
   else{
     setAttr(birthdate);
   }
